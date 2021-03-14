@@ -17,6 +17,11 @@ int digitalValue = 0;
 int counter = SECONDS_BETWEEN_DRIPS;
 int previousCounter = counter;
 
+// Variable to format time to HH:MM:SS (since start)
+time_t     now;
+struct tm  ts;
+char       buf[40];
+
 void setup() {
   Serial.begin(115200);
   Serial.println("Plant_watering_system Setup");
@@ -63,35 +68,40 @@ void dripThePlant() {
 void outputToSerialMonitor() {
 
   double delta = abs(analogValue - previousAnalogValue);
-  if (delta >= 5)
+  
+  if ( (delta >= 5) || (previousCounter != counter))
   {
     previousAnalogValue = analogValue;
-
-    time_t now;
+    
+    // Get current time
     time(&now);
-    struct tm * timeinfo = localtime(&now);  
-    Serial.print(timeinfo->tm_hour);
-    Serial.print(":");  
-    Serial.print(timeinfo->tm_min);
-    Serial.print(":");  
-    Serial.print(timeinfo->tm_sec);
+
+    // Format time, "hh:mm:ss" (time since startup)
+    ts = *localtime(&now);
+    strftime(buf, sizeof(buf), "%H:%M:%S ", &ts);
+    Serial.print(buf);
 
     if (analogValue <= DRIP_THRESHOLD)
-      Serial.print("\tSoil is OK");
+      Serial.print("Soil is OK");
     else 
-      Serial.print("\tSoil is to DRY");    
+      Serial.print("Soil is to DRY");    
 
-    Serial.print("\tMoisture AnalogValue: ");
+    Serial.print("\tMoisture Analoge value: ");
     Serial.print(analogValue);
-    Serial.print("\tMoisture DigitalValue: ");
-    Serial.println(digitalValue);
+    Serial.print("\tDigital value: ");
+    Serial.print(digitalValue);
+
+    if (previousCounter != counter)
+    {
+      previousCounter = counter;
+      Serial.print("\t Next drip in: ");
+      Serial.print(counter);
+      Serial.print(" seconds.");
+    }
+
+    Serial.println();
   }
 
-  if (previousCounter != counter)
-  {
-    previousCounter = counter;
-    Serial.print("Seconds to go for next drip: ");
-    Serial.println(counter);
-  }
+
 
 }
