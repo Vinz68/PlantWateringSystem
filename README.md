@@ -1,6 +1,6 @@
 # Introduction 
 Plant Watering System is a DIY Automatic Micro Home Drip Irrigation Watering System.
-It is a simple and cheap DIY system to automatically water a plant using 
+It is a simple and cheap system to automatically water a plant using 
 - a Soil Moisture Sensor, to detect if soil is dry and needs watering (or not),
 - a small pump, to pump water to the plant when needed,
 - a transistor to boost the power to the required level for the pump
@@ -13,8 +13,8 @@ It is a simple and cheap DIY system to automatically water a plant using
 1. Buy components
 To setup such a system for yourself you need the mentioned components. 
 Easiest and probably cheapest way to get most of the components in one buy is getting an 'Automatic Watering System Kit', like:
-[Aliexpress](https://www.aliexpress.com/item/1005003092397460.html?spm=a2g0o.productlist.0.0.76a2273eWvJQFe&algo_pvid=e7e86a76-c40e-402d-901a-dcb389c79a8f&algo_exp_id=e7e86a76-c40e-402d-901a-dcb389c79a8f-6&pdp_ext_f=%7B%22sku_id%22%3A%2212000024031784013%22%7D&pdp_pi=-1%3B3.44%3B-1%3B-1%40salePrice%3BEUR%3Bsearch-mainSearch) or
-[Amzon](https://www.amazon.com/WayinTop-Automatic-Irrigation-Watering-Capacitive/dp/B07TLRYGT1/ref=sr_1_24?crid=3L9IK859UHVNY&keywords=Automatic+Watering+System+Kit&qid=1645360150&sprefix=automatic+watering+system+kit%2Caps%2C131&sr=8-24)
+- [Aliexpress](https://www.aliexpress.com/item/1005003092397460.html?spm=a2g0o.productlist.0.0.76a2273eWvJQFe&algo_pvid=e7e86a76-c40e-402d-901a-dcb389c79a8f&algo_exp_id=e7e86a76-c40e-402d-901a-dcb389c79a8f-6&pdp_ext_f=%7B%22sku_id%22%3A%2212000024031784013%22%7D&pdp_pi=-1%3B3.44%3B-1%3B-1%40salePrice%3BEUR%3Bsearch-mainSearch) or
+- [Amzon](https://www.amazon.com/WayinTop-Automatic-Irrigation-Watering-Capacitive/dp/B07TLRYGT1/ref=sr_1_24?crid=3L9IK859UHVNY&keywords=Automatic+Watering+System+Kit&qid=1645360150&sprefix=automatic+watering+system+kit%2Caps%2C131&sr=8-24)
 I got mine for less then 2 euro on Aliexpress, but I see the prices are almost doubled now.
 
 Additional you need:
@@ -35,7 +35,7 @@ Connecet motor via T-220 transistor
 - ESP8266 D6  = Output to drive the motor (true=on / false=off), connect to transistor pin 1(left)
 - ESP8266 3v3 = power to transitor (pin 2, middle)
 - ESP8266 GND = ground (black wire) of motor.
--               pin 3 of transistor to power (red wire) of motor
+- Connect pin 3 of transistor to power (red wire) of motor
 
 [pin layout ESP8266](https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.png?resize=817%2C542&quality=100&strip=all&ssl=1)
 
