@@ -22,7 +22,9 @@ Additional you need:
 - Micro controller, I used the power efficient NodeMCU ESP8266 wifi module
 
 2. Setup the circuit
-Connect the Moisture sensor to the signal adapter.
+![Schema](/Images/Schema.png)
+
+Connect the Moisture sensor to the signal adapter
 Connect ESP8266 to the signal adapter:
 - ESP8266 A0  = the analoge output of signal adapter (A0)
 - ESP8266 D5  = the digital output signal adapter (D0, LOW for wet and HIGH for dry)
